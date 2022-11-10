@@ -8,6 +8,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 require('./controllers/authController')(app);
 
-app.listen(27017, () => {
-  console.log('Server started on port 27017');
+app.listen(3001, () => {
+  console.log('Server started on port 3001');
 });
