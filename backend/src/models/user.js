@@ -1,4 +1,4 @@
-const mongoose = require('../database');
+const mongoose = require('../database/index_db');
 const bcrypt = require('bcryptjs');
 
 const UserSchema = new mongoose.Schema({
@@ -18,9 +18,38 @@ const UserSchema = new mongoose.Schema({
     select: false,
   },
   userGroup: {
-    type: String,
+    type: Object,
     required: true,
     select: true,
+    options: {
+      provider: {
+        company: {
+          type: String,
+        },
+        CNPJ: {
+          type: Number,
+        },
+      },
+      cooker: {
+        CRI: {
+          type: Number,
+        }
+      },
+      supplies: {
+        type: Object,
+        options: {
+          supply1: {
+            type: String,
+          },
+          supply2: {
+            type: String,
+          },
+          supply3: {
+            type: String,
+          },
+        },
+      },
+    },
   },
   createdAt: {
     type: Date,
