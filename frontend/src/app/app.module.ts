@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/menu-list-components/header/header.component';
@@ -13,8 +15,7 @@ import { SidenavComponent } from './components/menu-list-components/sidenav/side
 import { MenuViewComponent } from './pages/menu-view/menu-view.component';
 import { UsergroupListComponent } from './components/menu-list-components/usergroup-list/usergroup-list.component';
 import { LoginViewComponent } from './pages/login-view/login-view.component';
-import { PageLoginComponent } from './components/login-components/page-login/page-login.component';
-import { CardLoginComponent } from './components/login-components/card-login/card-login.component';
+import { PageLoginComponent } from './components/login/page-login/page-login.component';
 
 
 @NgModule({
@@ -26,7 +27,6 @@ import { CardLoginComponent } from './components/login-components/card-login/car
     UsergroupListComponent,
     LoginViewComponent,
     PageLoginComponent,
-    CardLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +36,8 @@ import { CardLoginComponent } from './components/login-components/card-login/car
     MatSidenavModule,
     MatListModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
