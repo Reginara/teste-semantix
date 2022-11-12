@@ -7,7 +7,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/menu-list-components/header/header.component';
@@ -19,6 +22,9 @@ import { PageLoginComponent } from './components/login/page-login/page-login.com
 import { RegisterViewComponent } from './view/register-view/register-view.component';
 import { GeneralRegisterComponent } from './components/register/general-register/general-register.component';
 import { FormRegisterComponent } from './components/register/form-register/form-register.component';
+import { FormSupplierComponent } from './components/register/form-supplier/form-supplier.component';
+import { FormCookerComponent } from './components/register/form-cooker/form-cooker.component';
+import { FormSuppliesComponent } from './components/register/form-supplies/form-supplies.component';
 
 
 @NgModule({
@@ -33,6 +39,9 @@ import { FormRegisterComponent } from './components/register/form-register/form-
     RegisterViewComponent,
     GeneralRegisterComponent,
     FormRegisterComponent,
+    FormSupplierComponent,
+    FormCookerComponent,
+    FormSuppliesComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +53,9 @@ import { FormRegisterComponent } from './components/register/form-register/form-
     MatCardModule,
     MatFormFieldModule,
     MatIconModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
