@@ -18,6 +18,7 @@ import { LoginViewComponent } from './view/login-view/login-view.component';
 import { PageLoginComponent } from './components/login/page-login/page-login.component';
 import { RegisterViewComponent } from './view/register-view/register-view.component';
 import { GeneralRegisterComponent } from './components/register/general-register/general-register.component';
+import { FormRegisterComponent } from './components/register/form-register/form-register.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { GeneralRegisterComponent } from './components/register/general-register
     PageLoginComponent,
     RegisterViewComponent,
     GeneralRegisterComponent,
+    FormRegisterComponent,
   ],
   imports: [
     BrowserModule,
