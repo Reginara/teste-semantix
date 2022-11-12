@@ -3,21 +3,17 @@ const authConfig = require('../config/auth.json');
 
 module.exports = (req, res, next) => {
   const authHeader = req.headers.authorization;
-  if (!authHeader)
-    return res.status(401).send({ error: 'No token provided' });
+  if (!authHeader) return res.status(401).send({ error: 'No token provided' });
 
-  const parts = authHeader.split(' ');
+  jwt.verify(authHeader, authConfig.secret, (err, decoded) => {
+    if (err) {
 
-  if (!parts.length === 2)
-    return res.status(401).send({ error: 'Token error' });
+      if (err.name === 'TokenExpiredError') {
+        return res.status(401).send({ error: 'Token expired' });
+      }
 
-  const [ scheme, token ] = parts;
-
-  if (!/^Bearer$/i.test(scheme))
-    return res.status(401).send({ error: 'Token malformatted' });
-
-  jwt.verify(token, authConfig.secret, (err, decoded) => {
-    if (err) return res.status(401).send({ error: 'Token invalid' });
+      return res.status(401).send({ error: 'Token invalid' });
+    }
 
     req.userId = decoded.id;
     return next();

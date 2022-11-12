@@ -1,0 +1,11 @@
+{
+  "name": "John Doe",
+  "email": "johndoe@gmail.com",
+  "password": "1234abcd",
+  "userGroup": "contractor",
+  "company": {
+    "name": "John Doe Company",
+    "cnpj": "12345678901234"
+  },
+  "createdAt": "2020-05-01T00:00:00.000Z"
+}

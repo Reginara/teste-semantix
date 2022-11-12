@@ -16,52 +16,50 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
     select: false,
+    minlength: 8,
   },
+
   userGroup: {
-    type: Object,
+    type: [String],
+    enum: ['contractor', 'cooker', 'supplies'],
     required: true,
-    select: true,
-    options: {
-      provider: {
-        company: {
-          type: String,
-        },
-        CNPJ: {
-          type: Number,
-        },
-      },
-      cooker: {
-        CRI: {
-          type: Number,
-        }
-      },
-      supplies: {
-        type: Object,
-        options: {
-          supply1: {
-            type: String,
-          },
-          supply2: {
-            type: String,
-          },
-          supply3: {
-            type: String,
-          },
-        },
-      },
+  },
+  
+  company: {
+    name: {
+      type: String,
+      required: false,
+    },
+    cnpj: {
+      type: String,
+      required: false,
     },
   },
+  
+    cookerId: {
+      type: String,
+      required: false,
+    },
+  
+  supplies: {
+    type: [String],
+    required: false,
+    enum: ['rice', 'beans', 'noodles'],
+  },
+
   createdAt: {
     type: Date,
     default: Date.now,
   },
 });
 
-UserSchema.pre('save', async function(next) {
+UserSchema.pre('save', async function (next) {
   const hash = await bcrypt.hash(this.password, 10);
   this.password = hash;
 });
 
 const User = mongoose.model('User', UserSchema);
 
-module.exports = User;
+module.exports = {
+  UserModel: User,
+};
