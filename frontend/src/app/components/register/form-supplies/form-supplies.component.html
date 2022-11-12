@@ -1,0 +1,22 @@
+<main>
+  <h4>Cadastro de Usuário - <span class="supplies">Suprimentos</span></h4>
+  <form class="form-container">
+    <div class="input-field">
+      <div class="form-title">Crie sua conta</div>
+      <div class="input">
+        <span>
+          <img src="../../../../assets/food-menu.png">
+        </span>
+        <mat-form-field appearance="fill">
+          <mat-label class="label">Selecione os Suprimentos</mat-label>
+          <mat-select class="select" multiple [formControl]="supplies">
+            <mat-option *ngFor="let supply of suppliesList" [value]="supply">
+              {{supply}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <button type="button" mat-stroked-button>Cadastrar</button>
+    </div>
+  </form>
+</main>
