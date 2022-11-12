@@ -41,7 +41,7 @@ import { GeneralRegisterComponent } from './components/register/general-register
     MatListModule,
     MatCardModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

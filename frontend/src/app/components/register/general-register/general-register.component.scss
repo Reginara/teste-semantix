@@ -45,11 +45,12 @@
         }
 
         input, select {
-          width: 100%;
+          width: 370px;
           border: none;
           height: 50px;
           font-family: 'Poppins', sans-serif;
           font-size: 20px;
+          font-weight: 300;
           display: flex;
           background: #121214;
           color: #FFFFFF;
@@ -63,6 +64,11 @@
           box-shadow: 0 0 0 0;
           outline: 0;
           width: 380px;
+        }
+
+        .option {
+          height: 20px;
+          font-size: 20px;
         }
       }
     }
