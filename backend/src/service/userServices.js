@@ -1,26 +1,34 @@
-const UserModel = require('../models/userModel');
+const ModelUser = require('../models/userModel');
 
 const getUserByEmail = async (email) => {
-  const user = await UserModel.userExists(email);
+  const user = await ModelUser.userExists(email);
   return user;
 };
 
 const getAllUsers = async () => {
-  const allUsers = await UserModel.getAllUsers();
+  const allUsers = await ModelUser.getAllUsers();
   return allUsers;
 };
 
 const createUser = async (name, email, password, userGroup, cookerId, company, supplies) => {
-  const userExists = await UserModel.userExists({ email });
+  const userExists = await ModelUser.userExists({ email });
   if (userExists) {
     return { errorCode: 'User already exists' };
   }
-  const newUser = await UserModel.createUser({ name, email, password, userGroup, cookerId, company, supplies });
+  const newUser = await ModelUser.createUser({
+    name,
+    email,
+    password,
+    userGroup,
+    cookerId,
+    company,
+    supplies,
+  });
   return newUser;
 };
 
 const getUserByGroup = async (userGroup) => {
-  const users = await UserModel.getUsersByGroup({ userGroup });
+  const users = await ModelUser.getUsersByGroup({ userGroup });
   return users;
 };
 

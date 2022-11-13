@@ -7,9 +7,11 @@
         <span>
           <img src="../../../../assets/food-menu.png">
         </span>
+
         <!-- Corrigir a label com o nome do campo -->
         <mat-form-field appearance="fill">
           <span class="label">Selecione seus Suprimentos</span>
+
           <mat-select class="select" multiple [formControl]="supplies">
             <mat-option *ngFor="let supply of suppliesList" [value]="supply">
               {{supply}}

@@ -51,6 +51,7 @@ import { HttpClientModule } from '@angular/common/http';
     SuppliesTableComponent,
     ContractorTableComponent,
     CookerTableComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -69,6 +70,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatPaginatorModule,
     HttpClientModule
     ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

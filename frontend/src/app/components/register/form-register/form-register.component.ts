@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/users.model';
 import { UsersService } from '../../../users.service';
 
+
 @Component({
   selector: 'app-form-register',
   templateUrl: './form-register.component.html',
@@ -26,6 +27,7 @@ export class FormRegisterComponent implements OnInit {
     'Cozinheiro',
     'Suprimentos'
   ]);
+
 
 
   ngOnInit(): void {
