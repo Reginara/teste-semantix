@@ -1,10 +1,10 @@
 const { UserModel } = require('../models/user');
-const UserService = require('../service/userServices');
+const ModelUser = require('../models/userModel');
 
 const getUserByEmail = async (req, res) => {
-  const { email } = req.params;
+  const { email } = req.body;
   try {
-    const user = await UserService.getUserByEmail(email);
+    const user = await ModelUser.userExists({ email });
     res.status(200).json(user);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -12,12 +12,11 @@ const getUserByEmail = async (req, res) => {
 };
 
 const getAllUsers = async (req, res) => {
-  try {
-    const users = await UserModel.find();
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(404).json({ message: error.message });
+  const users = await ModelUser.getAllUsers();
+  if (users.length === 0) {
+    return res.status(404).json({ message: 'We do not found users' });
   }
+  res.status(200).json(users);
 };
 
 const createUser = async (req, res) => {
@@ -39,15 +38,13 @@ const createUser = async (req, res) => {
   }
 };
 
-
 const getUserByGroup = async (req, res) => {
   const { userGroup } = req.params;
-  try {
-    const users = await UserService.getUserByGroup(userGroup);
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(404).json({ message: error.message });
+  const users = await ModelUser.getUsersByGroup({ userGroup });
+  if (users.length === 0) {
+    return res.status(404).json({ message: 'We do not found users for this group' });
   }
+  res.status(200).json(users);
 };
 
 module.exports = {

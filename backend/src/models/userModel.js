@@ -1,20 +1,30 @@
 const mongoose = require('../database/index_db');
 
+const db = mongoose.connection;
+const collection = db.collection('users');
+
 const userExists = async ({ email }) => {
-  const db = await mongoose();
-  const user = await db.collection('users').findOne({ email });
+  const user = await collection.findOne({ email });
+  return user;
+};
+
+const getUserByEmail = async ({ email }) => {
+  const user = await collection.findOne({ email });
   return user !== null;
 };
 
 const getUsersByGroup = async ({ userGroup }) => {
-  const db = await mongoose();
-  const users = await db.collection('users').find({ userGroup }).toArray();
+  const users = await collection.find({ userGroup }).toArray();
+  return users;
+};
+
+const getAllUsers = async () => {
+  const users = await collection.find().toArray();
   return users;
 };
 
 const createUser = async ({ name, email, password, userGroup, cookerId, company, supplies }) => {
-  const db = await mongoose();
-  const user = await db.collection('users').insertOne({
+  const user = await collection.insertOne({
     name,
     email,
     password,
@@ -30,4 +40,6 @@ module.exports = {
   userExists,
   getUsersByGroup,
   createUser,
+  getAllUsers,
+  getUserByEmail
 };
