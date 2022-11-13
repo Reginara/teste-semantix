@@ -1,6 +1,8 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/users.model';
+import { UsersService } from '../../../users.service';
 
 @Component({
   selector: 'app-form-register',
@@ -9,10 +11,12 @@ import { Router } from '@angular/router';
 })
 export class FormRegisterComponent implements OnInit {
 
-  // viewFormRegister = true;
-  // viewFormSupplier = false;
-  // viewFormCooker = false;
-  // viewFormSupplies = false;
+  user: User = {
+    name: '',
+    email: '',
+    password: '',
+    userGroup: '',
+  }
 
   constructor(private router: Router) { }
 
@@ -23,23 +27,13 @@ export class FormRegisterComponent implements OnInit {
     'Suprimentos'
   ]);
 
+
   ngOnInit(): void {
   }
 
-  // register() {
-  //   if (this.groups.value == 'Fornecedor') {
-  //     this.viewFormRegister = false;
-  //     this.viewFormSupplier = true;
-  //   } else if (this.groups.value == 'Cozinheiro') {
-  //     this.viewFormRegister = false;
-  //     this.viewFormCooker = true;
-  //   } else if (this.groups.value == 'Suprimentos') {
-  //     this.viewFormRegister = false;
-  //     this.viewFormSupplies = true;
-  //   }
-
-  //   console.log(this.groups.value);
-  // }
+  register() {
+    
+  }
 
 
 }

@@ -30,6 +30,8 @@ import { SuppliesTableComponent } from './components/menu-list-components/suppli
 import { ContractorTableComponent } from './components/menu-list-components/contractor-table/contractor-table.component';
 import { CookerTableComponent } from './components/menu-list-components/cooker-table/cooker-table.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -65,6 +67,7 @@ import { CookerTableComponent } from './components/menu-list-components/cooker-t
     ReactiveFormsModule,
     MatTableModule,
     MatPaginatorModule,
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

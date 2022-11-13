@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginData } from 'src/users.model';
+import { UsersService } from '../../../users.service';
 
 @Component({
   selector: 'app-page-login',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageLoginComponent implements OnInit {
 
-  constructor() { }
+  loginData: LoginData = {
+    email: '',
+    password: ''
+  };
+
+  constructor(
+    private service: UsersService,
+    private router: Router,
+    private http: HttpClient,
+    ) { }
 
   ngOnInit(): void {
   }
 
+  login(): void {
+    this.service.newlogin([this.loginData]).subscribe((res) => {
+      console.log(res);
+      this.router.navigate(['/']);
+    });
+  }
 }

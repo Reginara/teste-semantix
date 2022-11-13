@@ -19,7 +19,12 @@
           <input type="password" matInput placeholder="Senha">
         </mat-form-field>
       </div>
-      <button type="button" mat-stroked-button routerLink="/">Entrar</button>
+      <button
+        type="button"
+        mat-stroked-button
+        (click)="login()"
+        >
+        Entrar</button>
       <span class="span-register"
         >Não tem uma conta? <a href="#" class="register-link" routerLink="/register">Registre-se</a></span
       >
