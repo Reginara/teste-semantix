@@ -46,16 +46,18 @@
         <mat-icon>group</mat-icon>
       </span>
       <mat-form-field>
-        <label>
-          <select>
+        <mat-label class="label">Seu Grupo</mat-label>
+          <select [formControl]="groups">
             <option label="Seu Grupo"></option>
-            <option class="option" value="1">Fornecedor</option>
-            <option class="option" value="2">Cozinheiro</option>
-            <option class="option" value="3">Suprimentos</option>
+            <option *ngFor="let group of groupList" [value]="group">{{group}}</option>
           </select>
-        </label>
       </mat-form-field>
     </div>
-    <button type="button" mat-stroked-button>Próximo</button>
+    <button
+      type="button"
+      mat-stroked-button
+      >
+      Próximo
+    </button>
   </div>
 </form>

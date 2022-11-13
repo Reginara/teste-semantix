@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-general-register',
   templateUrl: './general-register.component.html',
   styleUrls: ['./general-register.component.scss']
 })
-export class GeneralRegisterComponent implements OnInit {
+export class GeneralRegisterComponent {
 
-  constructor() { }
+  viewFormRegister = true;
+  viewFormSupplier = false;
+  viewFormCooker = false;
+  viewFormSupplies = false;
 
-  ngOnInit(): void {
-  }
+
+  constructor(private router:Router) { }
+
 
 }

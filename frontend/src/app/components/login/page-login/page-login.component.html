@@ -6,26 +6,22 @@
   <form class="form-container">
     <div class="input-field">
       <div class="input-email">
-        <span>
-          <img src="../../../../assets/email.png">
-        </span>
+        <mat-icon class="icon">email</mat-icon>
         <mat-form-field>
           <mat-label>E-mail</mat-label>
           <input type="email" matInput placeholder="E-mail">
         </mat-form-field>
       </div>
       <div class="input-password">
-        <span>
-          <img src="../../../../assets/senha.png">
-        </span>
+        <mat-icon class="icon">lock</mat-icon>
         <mat-form-field>
           <mat-label>Senha</mat-label>
           <input type="password" matInput placeholder="Senha">
         </mat-form-field>
       </div>
-      <button type="button" mat-stroked-button>Entrar</button>
+      <button type="button" mat-stroked-button routerLink="/">Entrar</button>
       <span class="span-register"
-        >Não tem uma conta? <a href="#" class="register-link">Registre-se</a></span
+        >Não tem uma conta? <a href="#" class="register-link" routerLink="/register">Registre-se</a></span
       >
     </div>
   </form>
