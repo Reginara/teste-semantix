@@ -8,12 +8,6 @@ import { Router } from '@angular/router';
 })
 export class GeneralRegisterComponent {
 
-  viewFormRegister = true;
-  viewFormSupplier = false;
-  viewFormCooker = false;
-  viewFormSupplies = false;
-
-
   constructor(private router:Router) { }
 
 

@@ -1,1 +1,16 @@
-<app-general-register></app-general-register>
+<main class="container">
+  <app-form-register
+  *ngIf="viewFormRegister"
+  ></app-form-register>
+
+  <app-form-supplier
+  *ngIf="viewFormSupplier"
+  ></app-form-supplier>
+  <app-form-cooker
+  *ngIf="viewFormCooker"
+  ></app-form-cooker>
+  <app-form-supplies
+  *ngIf="viewFormSupplies"
+  ></app-form-supplies>
+  <app-general-register></app-general-register>
+</main>
