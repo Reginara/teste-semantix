@@ -10,7 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/menu-list-components/header/header.component';
@@ -25,6 +26,11 @@ import { FormRegisterComponent } from './components/register/form-register/form-
 import { FormSupplierComponent } from './components/register/form-supplier/form-supplier.component';
 import { FormCookerComponent } from './components/register/form-cooker/form-cooker.component';
 import { FormSuppliesComponent } from './components/register/form-supplies/form-supplies.component';
+import { SuppliesTableComponent } from './components/menu-list-components/supplies-table/supplies-table.component';
+import { ContractorTableComponent } from './components/menu-list-components/contractor-table/contractor-table.component';
+import { CookerTableComponent } from './components/menu-list-components/cooker-table/cooker-table.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -42,6 +48,10 @@ import { FormSuppliesComponent } from './components/register/form-supplies/form-
     FormSupplierComponent,
     FormCookerComponent,
     FormSuppliesComponent,
+    SuppliesTableComponent,
+    ContractorTableComponent,
+    CookerTableComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -56,7 +66,11 @@ import { FormSuppliesComponent } from './components/register/form-supplies/form-
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
-  ],
+    MatTableModule,
+    MatPaginatorModule,
+    HttpClientModule
+    ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

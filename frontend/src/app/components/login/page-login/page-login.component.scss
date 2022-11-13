@@ -54,14 +54,15 @@
 
 
 
-        img {
+        .icon {
           width: 24px;
           height: 24px;
-          margin: auto 10px;
+          margin: 10px;
+          color: #00D698;
         }
 
         input {
-          width: 100%;
+          width: 300px;
           border: none;
           height: 50px;
           font-family: 'Poppins', sans-serif;

@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterViewComponent implements OnInit {
 
+  viewFormRegister = true;
+  viewFormSupplier = false;
+  viewFormCooker = false;
+  viewFormSupplies = false;
+
   constructor() { }
 
   ngOnInit(): void {
