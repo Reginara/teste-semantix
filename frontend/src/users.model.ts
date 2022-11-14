@@ -3,7 +3,7 @@ export interface User {
   name: string
   email: string
   password: string
-  userGroup: Object
+  userGroup: Array<string>
 }
 
 export interface UserGroup {

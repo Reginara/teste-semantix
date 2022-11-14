@@ -1,0 +1,13 @@
+<mat-toolbar class="header mat-elevation-z4">
+  <div>
+    <img class="logo-header" src="./../../../assets/logo_header.png" alt="logo semantix">
+  </div>
+  <div class="user-info">
+    <span class="user-name"></span>
+    <select class="user-select" (ngModelChange)="setUserOption($event)" [(ngModel)]="userType">
+      <option value="contractor">Fornecedor</option>
+      <option value="cooker">Cozinheiro</option>
+      <option value="supplies">Suprimentos</option>
+    </select>
+  </div>
+</mat-toolbar>

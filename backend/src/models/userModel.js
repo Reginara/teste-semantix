@@ -14,7 +14,9 @@ const getUserByEmail = async ({ email }) => {
 };
 
 const getUsersByGroup = async ({ userGroup }) => {
+  // get users if their userGroup is inside the array of userGroup
   const users = await collection.find({ userGroup }).toArray();
+
   return users;
 };
 
@@ -41,5 +43,5 @@ module.exports = {
   getUsersByGroup,
   createUser,
   getAllUsers,
-  getUserByEmail
+  getUserByEmail,
 };

@@ -20,25 +20,31 @@ const UserSchema = new mongoose.Schema({
   },
 
   userGroup: {
-    contractor: {
-      company_name: {
-        type: String,
-        required: false,
-      },
-      company_id: {
-        type: String,
-        required: false,
-        length: 14,
-      },
+    type: [String],
+    enum: ['contractor', 'cooker', 'supplies'],
+    required: true,
+  },
+
+  company: {
+    name: {
+      type: String,
+      required: false,
     },
-    cooker: {
-      cooker_id: {
-        type: Number,
-        required: false,
-        length: 9,
-      },
+    cnpj: {
+      type: String,
+      required: false,
     },
-    supplies: ['rice', 'beans', 'pasta', null],
+  },
+
+  cookerId: {
+    type: String,
+    required: false,
+  },
+
+  supplies: {
+    type: [String],
+    required: false,
+    enum: ['rice', 'beans', 'noodles'],
   },
 
   createdAt: {

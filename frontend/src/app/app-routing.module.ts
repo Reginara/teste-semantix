@@ -8,11 +8,11 @@ import { RegisterViewComponent } from './view/register-view/register-view.compon
 const routes: Routes = [
   {
     path: '',
-    component: MenuViewComponent
+    component: LoginViewComponent
   },
   {
-    path: 'login',
-    component: LoginViewComponent
+    path: 'list',
+    component: MenuViewComponent
   },
   {
     path: 'register',

@@ -1,7 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/users.model';
 import { UsersService } from '../../../users.service';
 
 
@@ -12,14 +12,27 @@ import { UsersService } from '../../../users.service';
 })
 export class FormRegisterComponent implements OnInit {
 
-  user: User = {
+  myForm = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl(''),
+    password_confirmation: new FormControl(''),
+    Usergroup: new FormControl(),
+  });
+
+  user = {
     name: '',
     email: '',
     password: '',
-    userGroup: '',
-  }
+    confirmPassword: '',
+    userGroup: [],
+  };
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private usersService: UsersService,
+    private http: HttpClient,
+    ) { }
 
   groups = new FormControl('');
   groupList = new Set([
@@ -28,14 +41,12 @@ export class FormRegisterComponent implements OnInit {
     'Suprimentos'
   ]);
 
-
-
   ngOnInit(): void {
   }
 
   register() {
-    
+
   }
 
-
 }
+

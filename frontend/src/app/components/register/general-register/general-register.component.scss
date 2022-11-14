@@ -50,8 +50,8 @@
         font-size: 18px;
         font-weight: 500;
 
-        mat-icon {
-          margin-right: 10px;
+        .icon {
+          margin-right: 14px;
           width: 24px;
           height: 24px;
         }
@@ -60,6 +60,7 @@
           border: none;
           background: none;
           color: #00D698;
+          font-size: 18px;
         }
       }
     }

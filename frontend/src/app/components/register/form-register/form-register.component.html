@@ -1,4 +1,4 @@
-<form class="form-container">
+<form [formGroup]="myForm" class="form-container">
   <div class="input-field">
     <div class="form-title">Crie sua conta</div>
     <div class="input">
@@ -7,7 +7,12 @@
       </span>
       <mat-form-field>
         <label>
-          <input type="email" matInput placeholder="E-mail">
+          <input
+            type="email"
+            matInput
+            placeholder="E-mail"
+            formControlName="email"
+          >
         </label>
       </mat-form-field>
     </div>
@@ -17,7 +22,12 @@
       </span>
       <mat-form-field>
         <label>
-          <input type="text" matInput placeholder="Seu nome">
+          <input
+            type="text"
+            matInput
+            placeholder="Seu nome"
+            formControlName="name"
+          >
         </label>
       </mat-form-field>
     </div>
@@ -27,7 +37,12 @@
       </span>
       <mat-form-field>
         <label>
-          <input type="password" matInput placeholder="Senha">
+          <input
+            type="password"
+            matInput
+            placeholder="Senha"
+            formControlName="password"
+          >
         </label>
       </mat-form-field>
     </div>
@@ -37,13 +52,18 @@
       </span>
       <mat-form-field>
         <label>
-          <input type="password" matInput placeholder="Confirme sua Senha">
+          <input
+            type="password"
+            matInput
+            placeholder="Confirme sua Senha"
+            formControlName="confirmPassword"
+            >
         </label>
       </mat-form-field>
     </div>
     <div class="input">
       <span>
-        <mat-icon>group</mat-icon>
+        <img class="icon" src="../../../../assets/group.png" alt="image group">
       </span>
       <mat-form-field>
         <mat-label class="label">Seu Grupo</mat-label>
@@ -56,9 +76,9 @@
     <button
       type="button"
       mat-stroked-button
+      (click)="register()"
       >
       Próximo
     </button>
-
   </div>
 </form>
