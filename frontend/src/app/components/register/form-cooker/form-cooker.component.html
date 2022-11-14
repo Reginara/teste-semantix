@@ -1,19 +1,34 @@
-<main>
-  <h4>Cadastro de Usuário - <span class="cooker">Cozinheiro</span></h4>
-  <form class="form-container">
-    <div class="input-field">
-      <div class="form-title">Crie sua conta</div>
-      <div class="input">
-        <span>
-          <img src="../../../../assets/id-user.png">
-        </span>
-        <mat-form-field>
-          <label>
-            <input type="text" matInput placeholder="Seu CRI (Número da caderneta)">
-          </label>
-        </mat-form-field>
+<main class="container">
+  <section>
+    <h4>Cadastro de Usuário - <span class="cooker">Cozinheiro</span></h4>
+    <form [formGroup]="cookerForm" class="form-container" (onSubmit)="register()">
+      <div class="input-field">
+        <div class="form-title">Crie sua conta</div>
+        <div class="input">
+          <span>
+            <img src="../../../../assets/id-user.png">
+          </span>
+            <label>
+              <input type="text" matInput placeholder="Seu CRI (Número da caderneta)" formControlName="cooker_id">
+            </label>
+        </div>
+        <button type="button" mat-stroked-button (click)="register()">Cadastrar</button>
       </div>
-      <button type="button" mat-stroked-button>Cadastrar</button>
+    </form>
+  </section>
+
+  <section class="banner">
+    <img class="logo" src="../../../../assets/logo_header.png">
+    <div class="text-banner">
+      <h3>All About Data</h3>
+      <h2>The Big Data revolution in your organization</h2>
+      <p>Join the data revolution and accelerate the digital transformation of your business with Big Data, Artificial Intelligence, Machine Learning, and more.</p>
+      <div class="back-button">
+        <span>
+          <img class="icon" src="../../../../assets/arrow-left.png" alt="arrow left">
+        </span>
+        <button mat-button routerLink="/">Voltar para Login</button>
+      </div>
     </div>
-  </form>
+  </section> 
 </main>

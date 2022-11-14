@@ -21,7 +21,6 @@ import { MenuViewComponent } from './view/menu-view/menu-view.component';
 import { LoginViewComponent } from './view/login-view/login-view.component';
 
 import { RegisterViewComponent } from './view/register-view/register-view.component';
-import { GeneralRegisterComponent } from './components/register/general-register/general-register.component';
 import { FormRegisterComponent } from './components/register/form-register/form-register.component';
 import { FormSupplierComponent } from './components/register/form-supplier/form-supplier.component';
 import { FormCookerComponent } from './components/register/form-cooker/form-cooker.component';
@@ -42,7 +41,6 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     MenuViewComponent,
     LoginViewComponent,
     RegisterViewComponent,
-    GeneralRegisterComponent,
     FormRegisterComponent,
     FormSupplierComponent,
     FormCookerComponent,

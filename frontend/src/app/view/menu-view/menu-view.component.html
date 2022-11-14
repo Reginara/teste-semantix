@@ -8,7 +8,6 @@
 
 
 <ng-container *ngIf="!isLoading">
-  <h1>Listagem de Usuários</h1>
   <app-contractor-table *ngIf="userType === 'contractor'" [userList]="userList"></app-contractor-table>
   <app-cooker-table *ngIf="userType === 'cooker'" [userList]="userList"></app-cooker-table>
   <app-supplies-table *ngIf="userType === 'supplies'" [userList]="userList"></app-supplies-table>

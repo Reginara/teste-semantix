@@ -44,7 +44,7 @@ const UserSchema = new mongoose.Schema({
   supplies: {
     type: [String],
     required: false,
-    enum: ['rice', 'beans', 'noodles'],
+    enum: ['rice', 'beans', 'pasta'],
   },
 
   createdAt: {

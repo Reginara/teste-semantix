@@ -1,29 +1,42 @@
-<main>
-  <h4>Cadastro de Usuário - <span class="supplier">Fornecedor</span></h4>
-  <form class="form-container">
-    <div class="input-field">
-      <div class="form-title">Crie sua conta</div>
-      <div class="input">
-        <span>
-          <img src="../../../../assets/location.png">
-        </span>
-        <mat-form-field>
-          <label>
-            <input type="text" matInput placeholder="Nome da sua Empresa">
-          </label>
-        </mat-form-field>
+<main class="container">
+  <section>
+    <h4>Cadastro de Usuário - <span class="supplier">Fornecedor</span></h4>
+    <form class="form-container">
+      <div class="input-field">
+        <div class="form-title">Crie sua conta</div>
+        <div class="input">
+          <span>
+            <img src="../../../../assets/location.png">
+          </span>
+            <label>
+              <input type="text" matInput placeholder="Nome da sua Empresa">
+            </label>
+        </div>
+        <div class="input">
+          <span>
+            <img src="../../../../assets/id-user.png">
+          </span>
+            <label>
+              <input type="text" matInput placeholder="CNPJ da sua Empresa">
+            </label>
+        </div>
+        <button type="button" mat-stroked-button>Cadastrar</button>
       </div>
-      <div class="input">
+    </form>
+  </section>
+
+  <section class="banner">
+    <img class="logo" src="../../../../assets/logo_header.png">
+    <div class="text-banner">
+      <h3>All About Data</h3>
+      <h2>The Big Data revolution in your organization</h2>
+      <p>Join the data revolution and accelerate the digital transformation of your business with Big Data, Artificial Intelligence, Machine Learning, and more.</p>
+      <div class="back-button">
         <span>
-          <img src="../../../../assets/id-user.png">
+          <img class="icon" src="../../../../assets/arrow-left.png" alt="arrow left">
         </span>
-        <mat-form-field>
-          <label>
-            <input type="text" matInput placeholder="CNPJ da sua Empresa">
-          </label>
-        </mat-form-field>
+        <button mat-button routerLink="/">Voltar para Login</button>
       </div>
-      <button type="button" mat-stroked-button>Cadastrar</button>
     </div>
-  </form>
+  </section> 
 </main>

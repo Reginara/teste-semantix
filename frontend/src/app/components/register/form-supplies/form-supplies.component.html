@@ -1,25 +1,36 @@
-<main>
-  <h4>Cadastro de Usuário - <span class="supplies">Suprimentos</span></h4>
-  <form class="form-container">
-    <div class="input-field">
-      <div class="form-title">Crie sua conta</div>
-      <div class="input">
-        <span>
+<main class="container">
+  <section>
+    <h4>Cadastro de Usuário - <span class="supplies">Suprimentos</span></h4>
+    <form class="form-container">
+      <div class="input-field">
+        <div class="form-title">Crie sua conta</div>
+        <div class="input">
           <img src="../../../../assets/food-menu.png">
-        </span>
-
-        <!-- Corrigir a label com o nome do campo -->
-        <mat-form-field appearance="fill">
           <span class="label">Selecione seus Suprimentos</span>
-
           <mat-select class="select" multiple [formControl]="supplies">
             <mat-option *ngFor="let supply of suppliesList" [value]="supply">
               {{supply}}
             </mat-option>
           </mat-select>
-        </mat-form-field>
+        </div>
+        <button type="button" mat-stroked-button >Cadastrar</button>
       </div>
-      <button type="button" mat-stroked-button>Cadastrar</button>
+    </form>
+  </section>
+
+
+  <section class="banner">
+    <img class="logo" src="../../../../assets/logo_header.png">
+    <div class="text-banner">
+      <h3>All About Data</h3>
+      <h2>The Big Data revolution in your organization</h2>
+      <p>Join the data revolution and accelerate the digital transformation of your business with Big Data, Artificial Intelligence, Machine Learning, and more.</p>
+      <div class="back-button">
+        <span>
+          <img class="icon" src="../../../../assets/arrow-left.png" alt="arrow left">
+        </span>
+        <button mat-button routerLink="/">Voltar para Login</button>
+      </div>
     </div>
-  </form>
+  </section> 
 </main>
