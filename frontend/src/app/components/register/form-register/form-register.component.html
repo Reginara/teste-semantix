@@ -1,64 +1,66 @@
-<form class="form-container">
-  <div class="input-field">
-    <div class="form-title">Crie sua conta</div>
-    <div class="input">
-      <span>
-        <mat-icon>email</mat-icon>
-      </span>
-      <mat-form-field>
+<main class="container">
+  <form [formGroup]="myForm" class="form-container">
+    <div class="input-field">
+      <div class="form-title">Crie sua conta</div>
+      <div class="input">
+        <span>
+          <mat-icon>email</mat-icon>
+        </span>
         <label>
-          <input type="email" matInput placeholder="E-mail">
+          <input type="email" matInput placeholder="E-mail" formControlName="email" />
         </label>
-      </mat-form-field>
-    </div>
-    <div class="input">
-      <span>
-        <mat-icon>person</mat-icon>
-      </span>
-      <mat-form-field>
+      </div>
+      <div class="input">
+        <span>
+          <mat-icon>person</mat-icon>
+        </span>
         <label>
-          <input type="text" matInput placeholder="Seu nome">
+          <input type="text" matInput placeholder="Seu nome" formControlName="name" />
         </label>
-      </mat-form-field>
-    </div>
-    <div class="input">
-      <span>
-        <mat-icon>lock</mat-icon>
-      </span>
-      <mat-form-field>
+      </div>
+      <div class="input">
+        <span>
+          <mat-icon>lock</mat-icon>
+        </span>
         <label>
-          <input type="password" matInput placeholder="Senha">
+          <input type="password" matInput placeholder="Senha" formControlName="password" />
         </label>
-      </mat-form-field>
-    </div>
-    <div class="input">
-      <span>
-        <mat-icon>lock</mat-icon>
-      </span>
-      <mat-form-field>
+      </div>
+      <div class="input">
+        <span>
+          <mat-icon>lock</mat-icon>
+        </span>
         <label>
-          <input type="password" matInput placeholder="Confirme sua Senha">
+          <input type="password" matInput placeholder="Confirme sua Senha" formControlName="confirmPassword" />
         </label>
-      </mat-form-field>
-    </div>
-    <div class="input">
-      <span>
-        <mat-icon>group</mat-icon>
-      </span>
-      <mat-form-field>
-        <mat-label class="label">Seu Grupo</mat-label>
-          <select [formControl]="groups">
-            <option label="Seu Grupo"></option>
-            <option *ngFor="let group of groupList" [value]="group">{{group}}</option>
+      </div>
+      <div class="input">
+        <span>
+          <img class="icon" src="../../../../assets/group.png" alt="image group" />
+        </span>
+          <select class="user-select" formControlName="userGroup">
+            <option label="Selecione o Grupo"></option>
+            <option value="contractor">Fornecedor</option>
+            <option value="cooker">Cozinheiro</option>
+            <option value="supplies">Suprimentos</option>
           </select>
-      </mat-form-field>
+      </div>
+      <button type="button" mat-stroked-button (click)="register()" (ngModelChange)="onRegister">Próximo</button>
     </div>
-    <button
-      type="button"
-      mat-stroked-button
-      >
-      Próximo
-    </button>
+  </form>
 
-  </div>
-</form>
+  <section class="banner">
+    <img class="logo" src="../../../../assets/logo_header.png">
+    <div class="text-banner">
+      <h3>All About Data</h3>
+      <h2>The Big Data revolution in your organization</h2>
+      <p>Join the data revolution and accelerate the digital transformation of your business with Big Data, Artificial Intelligence, Machine Learning, and more.</p>
+      <div class="back-button">
+        <span>
+          <img class="icon" src="../../../../assets/arrow-left.png" alt="arrow left">
+        </span>
+        <button mat-button routerLink="/">Voltar para Login</button>
+      </div>
+    </div>
+  </section>  
+</main>

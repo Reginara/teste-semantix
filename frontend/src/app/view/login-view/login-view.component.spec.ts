@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LoginViewComponent } from './login-view.component';
 
-describe('LoginViewComponent', () => {
+
+
+describe('PageLoginComponent', () => {
   let component: LoginViewComponent;
   let fixture: ComponentFixture<LoginViewComponent>;
 

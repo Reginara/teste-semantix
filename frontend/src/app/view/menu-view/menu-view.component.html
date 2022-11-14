@@ -1,2 +1,16 @@
-<app-header-component></app-header-component>
+<app-header-component (onUserTypeChange)="onUserTypeChange($event)">
+</app-header-component>
+
+
+<div *ngIf="isLoading">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>
+
+
+<ng-container *ngIf="!isLoading">
+  <app-contractor-table *ngIf="userType === 'contractor'" [userList]="userList"></app-contractor-table>
+  <app-cooker-table *ngIf="userType === 'cooker'" [userList]="userList"></app-cooker-table>
+  <app-supplies-table *ngIf="userType === 'supplies'" [userList]="userList"></app-supplies-table>
+</ng-container>
+  
 <app-sidenav></app-sidenav>

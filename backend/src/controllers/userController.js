@@ -41,9 +41,6 @@ const createUser = async (req, res) => {
 const getUserByGroup = async (req, res) => {
   const { userGroup } = req.params;
   const users = await ModelUser.getUsersByGroup({ userGroup });
-  if (users.length === 0) {
-    return res.status(404).json({ message: 'We do not found users for this group' });
-  }
   res.status(200).json(users);
 };
 
